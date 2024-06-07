@@ -243,6 +243,23 @@
 
 }
 
+    @media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    align-items: flex-start; /* Memposisikan konten ke atas */
+    justify-content: space-between; /* Memisahkan dua kolom */
+  }
+
+  #canvas-container {
+    width: calc(50% - 20px); /* Lebar setengah dari layar */
+    margin-right: 20px; /* Jarak antara kolom */
+  }
+
+  #canvas {
+    width: 100%; /* Agar canvas mengisi seluruh lebar */
+    height: auto; /* Tinggi otomatis sesuai proporsi gambar */
+  }
+}
   
   </style>
 </head>
@@ -252,13 +269,16 @@
     <div class="bounce"></div>
     <div class="bounce"></div>
 </div>
-  <div id="canvas-container">
-    <img src="img/logo-organisasi.png" class="logo">
+  <div class="container">
+  <div id="canvas-container"><canvas id="canvas"></canvas></div>
+  
+    </div>
+   <img src="img/logo-organisasi.png" class="logo">
     <div class="oc-margin">
       <h1 class="title">Ayo Buat Foto Twibbon Kamu!</h1>
       <p class="sub-tittle">Spesial HUT KPMB Makassar ke-35 Tahun</p>
     </div>
-    <canvas id="canvas"></canvas>
+    
         <div class="slider-container">
           <label for="zoom-slider">Zoom:</label>
           <input type="range" id="zoom-slider" min="0.1" max="10" step="0.01" value="1">
@@ -286,7 +306,6 @@
         </a>
       </div>
       </div>
-    </div>
   </div>
 
 <script>
